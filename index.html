@@ -3560,3 +3560,33 @@
         let cur = 0,
           busy = false;
 
+        /* ---------- text splitting ---------- */
+        function splitWords(el) {
+          const walk = (node) => {
+            [...node.childNodes].forEach((n) => {
+              if (n.nodeType === 3) {
+                const frag = document.createDocumentFragment();
+                n.textContent.split(/(\s+)/).forEach((p) => {
+                  if (!p) return;
+                  if (/^\s+$/.test(p)) {
+                    frag.append(document.createTextNode(" "));
+                    return;
+                  }
+                  const o = document.createElement("span");
+                  o.className = "w";
+                  const i = document.createElement("span");
+                  i.className = "wi";
+                  i.textContent = p;
+                  o.append(i);
+                  frag.append(o);
+                });
+                n.replaceWith(frag);
+              } else if (n.nodeType === 1 && n.tagName.toLowerCase() !== "svg")
+                walk(n);
+            });
+          };
+          walk(el);
+        }
+        function splitChars(el) {
+          const words = el.textContent.trim().split(/\s+/);
+          el.textContent = "";
