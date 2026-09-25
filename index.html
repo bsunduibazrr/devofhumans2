@@ -957,3 +957,34 @@
         background: var(--ink);
       }
 
+      /* stat */
+      .s-stat {
+        align-items: center;
+        text-align: center;
+      }
+      .fraction {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: calc(var(--u) * 19);
+        line-height: 0.78;
+        letter-spacing: -0.05em;
+      }
+      .fraction .sl {
+        font-style: italic;
+        font-size: 0.6em;
+        align-self: center;
+        color: var(--mute);
+        padding-inline: 0.08em;
+      }
+      .fraction .dn {
+        align-self: flex-end;
+      }
+      .claim {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 2.5);
+        line-height: 1.15;
+        max-width: 28ch;
+        margin-top: calc(var(--u) * 2.6);
