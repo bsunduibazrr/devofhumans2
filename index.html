@@ -4694,3 +4694,35 @@
           lcnt = $("#lcnt"),
           lmasks = $$(".loader .m > *");
 
+        // real progress: every font face + window load counts as one task
+        const FACES = [
+          '300 20px "Cormorant Garamond"',
+          '400 20px "Cormorant Garamond"',
+          '500 20px "Cormorant Garamond"',
+          'italic 300 20px "Cormorant Garamond"',
+          'italic 400 20px "Cormorant Garamond"',
+          'italic 500 20px "Cormorant Garamond"',
+          "400 20px Onest",
+          "500 20px Onest",
+          "600 20px Onest",
+          '400 20px "JetBrains Mono"',
+          '500 20px "JetBrains Mono"',
+        ];
+        const TOTAL = FACES.length + 1;
+        let done = 0;
+        const tick = () => {
+          done = Math.min(TOTAL, done + 1);
+        };
+
+        function boot() {
+          cur = startAt;
+          slides[cur].classList.add("on");
+          updateChrome(1);
+          if (!animated) {
+            loader.classList.add("done");
+            three.ready = true;
+            return;
+          }
+          G.set(slides[cur], { opacity: 0 });
+          busy = true;
+
