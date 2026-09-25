@@ -931,3 +931,29 @@
         left: var(--gutter);
         right: var(--gutter);
         bottom: max(70px, 11.5vh);
+        display: flex;
+        gap: calc(var(--u) * 2.2);
+        flex-wrap: wrap;
+        font-family: var(--mono);
+        font-size: max(10px, calc(var(--u) * 0.72));
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--mute);
+      }
+      .pnav span {
+        position: relative;
+        padding-bottom: 4px;
+      }
+      .pnav span.on {
+        color: var(--ink);
+      }
+      .pnav span.on::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background: var(--ink);
+      }
+
