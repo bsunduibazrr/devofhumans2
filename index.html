@@ -2459,3 +2459,26 @@
         }
         .pnav {
           display: none;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .grain {
+          animation: none;
+        }
+        * {
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="ring" aria-hidden="true"></div>
+    <div class="curtain" aria-hidden="true">
+      <div class="cc" id="cc">07 / 25</div>
+      <div class="cn" id="cn"><span>Хаана</span></div>
+    </div>
+    <div class="wipe" aria-hidden="true"></div>
+
