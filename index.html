@@ -3647,3 +3647,31 @@
               0.08 + i * 0.14,
             );
           });
+          q("[data-chars]").forEach((el) => {
+            tl.fromTo(
+              $$(".ci", el),
+              { yPercent: 110, rotate: 10, opacity: 0 },
+              {
+                yPercent: 0,
+                rotate: 0,
+                opacity: 1,
+                duration: 1.2,
+                ease: "expo.out",
+                stagger: 0.04,
+              },
+              0.05,
+            );
+          });
+          q("[data-read]").forEach((el) => {
+            tl.fromTo(
+              $$(".w", el),
+              { opacity: 0.08, y: 8 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+                ease: "power2.out",
+                stagger: 0.11,
+              },
+              0.35,
+            );
