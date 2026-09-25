@@ -3732,3 +3732,31 @@
               },
               0,
             );
+            tl.fromTo(
+              $(".dn", el),
+              { yPercent: -60 },
+              { yPercent: 0, duration: 1.6, ease: "expo.out" },
+              0.1,
+            );
+            tl.fromTo(
+              $(".sl", el),
+              { rotate: -90, opacity: 0 },
+              { rotate: 0, opacity: 1, duration: 1.2, ease: "expo.out" },
+              0.2,
+            );
+          });
+          q("[data-bar]").forEach((el, i) =>
+            tl.fromTo(
+              el,
+              { scaleX: 0 },
+              { scaleX: 1, duration: 1.4, ease: "expo.out" },
+              0.45 + i * 0.08,
+            ),
+          );
+          q("[data-grow]").forEach((el, i) =>
+            tl.fromTo(
+              el,
+              { scaleY: 0 },
+              { scaleY: 1, duration: 1.5, ease: "expo.out" },
+              0.4 + i * 0.12,
+            ),
