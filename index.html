@@ -3760,3 +3760,31 @@
               { scaleY: 1, duration: 1.5, ease: "expo.out" },
               0.4 + i * 0.12,
             ),
+          );
+          const pnav = q(".pnav span");
+          if (pnav.length)
+            tl.fromTo(
+              pnav,
+              { opacity: 0, y: 10 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "expo.out",
+                stagger: 0.04,
+              },
+              0.5,
+            );
+          // labels decode like a terminal
+          q(
+            ".tag, .place-top, .team-cap, .src, .law > .mono, .dev .mono",
+          ).forEach((el, i) => scramble(el, tl, 0.1 + i * 0.05, 0.8));
+          q(".names li").forEach((el, i) =>
+            scramble(el, tl, 0.5 + i * 0.08, 1),
+          );
+          // clock ticks up to 07:40
+          q("[data-clock]").forEach((el) => {
+            const o = { m: 31 };
+            tl.to(
+              o,
+              {
