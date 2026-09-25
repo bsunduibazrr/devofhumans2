@@ -1549,3 +1549,36 @@
         font-size: calc(var(--u) * 6.6);
       }
 
+      /* question */
+      .qbig {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 6.4);
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+        max-width: 16ch;
+      }
+      .vote {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 1rem calc(var(--u) * 1.6);
+        margin-top: calc(var(--u) * 4);
+      }
+      .vbtn {
+        all: unset;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: baseline;
+        gap: calc(var(--u) * 1.4);
+        border: 1px solid var(--ink);
+        border-radius: 99px;
+        padding: calc(var(--u) * 1) calc(var(--u) * 2.4);
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 2.6);
+        line-height: 1;
+        transition:
+          background 0.4s var(--ease),
+          color 0.4s var(--ease);
+      }
+      .vbtn b {
+        font-family: var(--mono);
