@@ -4012,3 +4012,39 @@
           } catch (e) {}
         }
 
+        /* ---------- speaker notes ---------- */
+        let notesOn = false;
+        const notesPanel = $("#notesPanel");
+        function renderNotes() {
+          notesPanel.hidden = !notesOn;
+          if (!notesOn) return;
+          const n = $(".notes", slides[cur]);
+          $("#notesWho").textContent = n
+            ? `Илтгэгч ${n.dataset.who} · ${pad(cur + 1)} / ${pad(N)}`
+            : "";
+          $("#notesTxt").textContent = n
+            ? n.textContent.replace(/\s+/g, " ").trim()
+            : "";
+        }
+
+        /* ---------- photos: hide cleanly if a file is missing ---------- */
+        $$("[data-ph] img").forEach((img) => {
+          const fail = () => img.closest("[data-ph]").classList.add("gone");
+          if (img.complete && !img.naturalWidth) fail();
+          img.addEventListener("error", fail);
+        });
+
+        /* ---------- live vote ---------- */
+        $$(".vbtn").forEach((b) =>
+          b.addEventListener("click", () => {
+            const n = $("b", b);
+            n.textContent = +n.textContent + 1;
+            if (animated)
+              G.fromTo(
+                n,
+                { yPercent: -60, opacity: 0 },
+                { yPercent: 0, opacity: 1, duration: 0.5, ease: "expo.out" },
+              );
+          }),
+        );
+
