@@ -1978,3 +1978,35 @@
         margin-top: calc(var(--u) * 3);
         display: inline-flex;
         align-items: center;
+        gap: calc(var(--u) * 1.8);
+        border: 1px solid var(--ink);
+        border-radius: 99px;
+        padding: calc(var(--u) * 0.8) calc(var(--u) * 2.2) calc(var(--u) * 0.8)
+          calc(var(--u) * 0.8);
+        transition: background 0.4s var(--ease);
+      }
+      .timer .tt {
+        display: grid;
+        place-items: center;
+        width: calc(var(--u) * 7);
+        height: calc(var(--u) * 7);
+        min-width: 58px;
+        min-height: 58px;
+        border-radius: 50%;
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--mono);
+        font-size: max(14px, calc(var(--u) * 1.3));
+        font-variant-numeric: tabular-nums;
+        background-image: conic-gradient(
+          var(--accent) calc(var(--p, 0) * 1turn),
+          transparent 0
+        );
+      }
+      .timer:hover {
+        background: rgba(21, 49, 42, 0.06);
+      }
+      .timer.done .tt {
+        background: var(--accent);
+      }
+
