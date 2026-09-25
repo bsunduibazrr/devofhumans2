@@ -4726,3 +4726,16 @@
           G.set(slides[cur], { opacity: 0 });
           busy = true;
 
+          // intro text rises in
+          G.fromTo(
+            lmasks,
+            { yPercent: 110 },
+            {
+              yPercent: 0,
+              duration: 1.1,
+              ease: "expo.out",
+              stagger: 0.05,
+              delay: 0.05,
+            },
+          );
+
