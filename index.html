@@ -988,3 +988,32 @@
         line-height: 1.15;
         max-width: 28ch;
         margin-top: calc(var(--u) * 2.6);
+      }
+      .stat-row {
+        display: flex;
+        gap: calc(var(--u) * 5);
+        justify-content: center;
+        margin-top: calc(var(--u) * 3);
+        text-align: left;
+      }
+      .stat-row > div {
+        border-top: 1px solid var(--ink);
+        padding-top: 10px;
+        width: calc(var(--u) * 22);
+      }
+      .stat-row .n {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 3.2);
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+      }
+      .stat-row p {
+        margin-top: 0.4rem;
+        color: var(--ink-2);
+        font-size: max(14px, calc(var(--u) * 1.15));
+      }
+      .src {
+        margin-top: calc(var(--u) * 1.6);
+        color: var(--mute);
+      }
+
