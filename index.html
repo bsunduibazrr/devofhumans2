@@ -4173,3 +4173,43 @@
           { passive: true },
         );
 
+        /* ---------- cursor, tilt, magnetic, parallax ---------- */
+        const cursor = $(".cursor"),
+          ring = $(".ring");
+        const mouse = { x: innerWidth / 2, y: innerHeight / 2, nx: 0, ny: 0 };
+        addEventListener(
+          "pointermove",
+          (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+            mouse.nx = (e.clientX / innerWidth) * 2 - 1;
+            mouse.ny = (e.clientY / innerHeight) * 2 - 1;
+          },
+          { passive: true },
+        );
+        addEventListener("pointerdown", () => ring.classList.add("press"));
+        addEventListener("pointerup", () => ring.classList.remove("press"));
+        if (fine) {
+          $$(
+            ".pr, .art, .reason, .q, .names li, .todo li, .nav button, .dev, .places span, .chip, .age, .stat-row > div, .rc, .qd, .ab, .cz, .chain li, .dp, .dy, .vbtn, .timer, .spec-steps li",
+          ).forEach((el) => {
+            el.addEventListener("pointerenter", () =>
+              ring.classList.add("big"),
+            );
+            el.addEventListener("pointerleave", () =>
+              ring.classList.remove("big"),
+            );
+          });
+        }
+        if (fine && animated) {
+          $$(".stat-row > div, .age, .dev, .rc, .qd").forEach((el) => {
+            el.classList.add("tilt");
+            el.addEventListener("pointermove", (e) => {
+              const r = el.getBoundingClientRect();
+              const x = (e.clientX - r.left) / r.width - 0.5,
+                y = (e.clientY - r.top) / r.height - 0.5;
+              G.to(el, {
+                rotateY: x * 10,
+                rotateX: -y * 10,
+                transformPerspective: 800,
+                duration: 0.5,
