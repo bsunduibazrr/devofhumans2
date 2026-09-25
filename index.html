@@ -1414,3 +1414,41 @@
         font-size: max(14px, calc(var(--u) * 1.15));
       }
 
+      /* help */
+      .calls {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0 calc(var(--u) * 5);
+        margin-top: calc(var(--u) * 3);
+        max-width: 80%;
+      }
+      .call {
+        display: grid;
+        grid-template-columns: calc(var(--u) * 13) minmax(0, 1fr);
+        gap: calc(var(--u) * 1.6);
+        align-items: baseline;
+        padding: calc(var(--u) * 1.6) 0;
+        border-top: 1px solid var(--ink);
+      }
+      .call .num {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: calc(var(--u) * 6);
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+      }
+      .call .num.sm {
+        font-style: italic;
+        font-size: calc(var(--u) * 3.6);
+      }
+      .call p {
+        color: var(--ink-2);
+      }
+      .call b {
+        display: block;
+        font-weight: 500;
+        color: var(--ink);
+        margin-bottom: 0.2rem;
+      }
+
