@@ -3958,3 +3958,40 @@
               0,
             )
             .fromTo(
+              cn,
+              { yPercent: 110 * d, rotate: 3 * d },
+              { yPercent: 0, rotate: 0, duration: 0.7, ease: "expo.out" },
+              0.22,
+            )
+            .fromTo(
+              cc,
+              { opacity: 0, x: -20 },
+              { opacity: 0.6, x: 0, duration: 0.5, ease: "expo.out" },
+              0.28,
+            )
+            .add(() => {
+              out.classList.remove("on");
+              G.set(out, { clearProps: "opacity,transform" });
+              inn.classList.add("on");
+              enter(inn, d);
+            }, 0.72)
+            .to(
+              cn,
+              { yPercent: -110 * d, duration: 0.4, ease: "power3.in" },
+              0.68,
+            )
+            .to(cc, { opacity: 0, duration: 0.3 }, 0.7)
+            .to(
+              curtain,
+              { clipPath: to, duration: 0.65, ease: "power3.inOut" },
+              0.75,
+            );
+        }
+        function go(i) {
+          i = Math.max(0, Math.min(N - 1, i));
+          if (i === cur || busy) return;
+          show(i, i > cur ? 1 : -1);
+        }
+        const next = () => go(cur + 1),
+          prev = () => go(cur - 1);
+
