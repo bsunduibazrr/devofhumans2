@@ -4405,3 +4405,37 @@
           top.rotation.x = Math.PI;
           spin.add(bottom, top);
 
+          // turned pillars
+          const pil = [
+            V2(0, -1.52),
+            V2(0.075, -1.52),
+            V2(0.075, -1.45),
+            V2(0.045, -1.39),
+            V2(0.045, -0.14),
+            V2(0.08, -0.06),
+            V2(0.08, 0.06),
+            V2(0.045, 0.14),
+            V2(0.045, 1.39),
+            V2(0.075, 1.45),
+            V2(0.075, 1.52),
+            V2(0, 1.52),
+          ];
+          for (let k = 0; k < 3; k++) {
+            const p = inked(new THREE.LatheGeometry(pil, 10), 20);
+            const a = Math.PI / 2 + (k * Math.PI * 2) / 3;
+            p.position.set(Math.cos(a) * 0.93, 0, Math.sin(a) * 0.93);
+            spin.add(p);
+          }
+
+          // glass: silhouette shader + engraved meridians
+          const TABLE = [
+            [0, 0.055],
+            [0.1, 0.085],
+            [0.25, 0.2],
+            [0.45, 0.42],
+            [0.65, 0.6],
+            [0.85, 0.71],
+            [1.05, 0.75],
+            [1.25, 0.69],
+            [1.4, 0.52],
+            [1.5, 0.3],
