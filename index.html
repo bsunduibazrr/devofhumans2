@@ -55,3 +55,28 @@
         text-rendering: optimizeLegibility;
         overscroll-behavior: none;
       }
+      ::selection {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      em {
+        font-style: italic;
+      }
+      h1,
+      h2,
+      h3,
+      p,
+      ul {
+        margin: 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-weight: 300;
+        text-wrap: balance;
+      }
+      :focus-visible {
+        outline: 1.5px solid var(--ink);
+        outline-offset: 4px;
+      }
+
