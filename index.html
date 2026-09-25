@@ -4241,3 +4241,31 @@
           });
         }
         // layered mouse parallax: big type drifts more than small type
+        const DEPTH = {
+          ".s-hero h1": 14,
+          ".s-hero .who": 28,
+          ".s-story .big": 12,
+          ".h2": 12,
+          ".place-word": 34,
+          ".fraction": 22,
+          ".claim": 8,
+          ".thanks": 26,
+          ".s-end h2": 16,
+          ".places": 20,
+          ".place-h": 10,
+          ".qbig": 12,
+          ".hero-ph": 18,
+          ".pl-ph": 16,
+          ".ph": 14,
+          ".neq": 20,
+          ".steps4": 10,
+        };
+        const layers = slides.map((sl) =>
+          Object.entries(DEPTH).flatMap(([sel, dep]) =>
+            $$(sel, sl).map((el) => [el, dep]),
+          ),
+        );
+        const cpos = { x: mouse.x, y: mouse.y },
+          rpos = { x: mouse.x, y: mouse.y },
+          pp = { x: 0, y: 0 };
+        (function uiLoop() {
