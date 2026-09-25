@@ -479,3 +479,31 @@
         padding-bottom: calc(var(--gutter) + env(safe-area-inset-bottom, 0px));
       }
       .loader .m {
+        display: block;
+        overflow: hidden;
+      }
+      .loader .m > * {
+        display: block;
+      }
+      .loader-row {
+        font-family: var(--mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        color: rgba(243, 237, 226, 0.62);
+      }
+      .loader-mid {
+        align-self: center;
+        justify-self: start;
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: clamp(2.2rem, calc(var(--u) * 6.4), 6rem);
+        line-height: 1;
+        letter-spacing: -0.015em;
+      }
+      .loader-mid em {
+        color: rgba(243, 237, 226, 0.55);
+      }
