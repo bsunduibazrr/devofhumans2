@@ -1152,3 +1152,37 @@
         transform: translateX(0.3em);
       }
 
+      /* end */
+      .s-end h2 {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 10.5);
+        line-height: 0.88;
+        letter-spacing: -0.03em;
+        max-width: 8ch;
+      }
+      .s-end .closing {
+        margin-top: calc(var(--u) * 2.6);
+        font-size: calc(var(--u) * 1.8);
+        color: var(--ink-2);
+        max-width: 30ch;
+      }
+
+      /* final */
+      .s-final .inner {
+        max-width: min(100%, calc(var(--u) * 64));
+      }
+      .thanks {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: calc(var(--u) * 10);
+        line-height: 0.9;
+        letter-spacing: -0.03em;
+      }
+      .names {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        border-top: 1px solid var(--ink);
+      }
