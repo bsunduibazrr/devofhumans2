@@ -2010,3 +2010,28 @@
         background: var(--accent);
       }
 
+      /* discussion points */
+      .dps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: calc(var(--u) * 2);
+        margin-top: calc(var(--u) * 3);
+      }
+      .dp {
+        all: unset;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--u) * 1.1);
+        padding: calc(var(--u) * 2);
+        min-height: calc(var(--u) * 20);
+        border: 1px solid var(--ink);
+        position: relative;
+        transition:
+          background 0.5s var(--ease),
+          color 0.5s var(--ease);
+      }
+      .dp .k {
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: calc(var(--u) * 3.4);
