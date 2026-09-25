@@ -847,3 +847,32 @@
         position: relative;
       }
       .places span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -0.02em;
+        height: 1px;
+        background: var(--ink);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.7s var(--ease);
+      }
+      .places span:hover::after {
+        transform: scaleX(1);
+      }
+      .places small {
+        font-family: var(--mono);
+        font-style: normal;
+        font-size: max(10px, calc(var(--u) * 0.7));
+        letter-spacing: 0.08em;
+        vertical-align: super;
+        margin-right: 0.5em;
+        color: var(--mute);
+      }
+      .s-where .lead {
+        margin-top: calc(var(--u) * 1.8);
+        font-size: calc(var(--u) * 1.6);
+        color: var(--ink-2);
+      }
+
