@@ -2317,3 +2317,32 @@
         .hero-ph,
         .pl-ph,
         .ph {
+          display: none;
+        }
+        .s-steps .inner {
+          max-width: none;
+        }
+        .rights,
+        .daily {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .rc {
+          min-height: 0;
+          padding: 12px;
+        }
+        .quad {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .spec-steps {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .spec-steps li,
+        .spec-steps li:nth-child(4) {
+          border-left: 0;
+          padding: 8px 0 0 22px;
+        }
+        .spec-steps li::before,
+        .spec-steps li:nth-child(4)::before {
+          left: 0;
+          top: 14px;
+        }
