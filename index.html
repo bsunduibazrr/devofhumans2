@@ -1691,3 +1691,35 @@
         color: #e7a47c;
       }
 
+      /* spectrum */
+      .spec {
+        margin-top: calc(var(--u) * 3.4);
+      }
+      .spec-ends {
+        display: flex;
+        justify-content: space-between;
+        color: var(--ink-2);
+      }
+      .spec-line {
+        height: 3px;
+        margin: 12px 0 0;
+        background: var(--rule);
+      }
+      .spec-line i {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, var(--ink) 0 55%, var(--accent) 65%);
+        transform-origin: 0 50%;
+      }
+      .spec-steps {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+      }
+      .spec-steps li {
+        padding: calc(var(--u) * 1.6) calc(var(--u) * 1.2) 0 0;
+        position: relative;
+      }
+      .spec-steps li::before {
+        content: "";
