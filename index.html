@@ -2289,3 +2289,31 @@
         }
         .fm {
           grid-template-columns: minmax(0, 1fr) auto;
+        }
+        .fm .ex,
+        .fm .fb {
+          grid-column: 1 / -1;
+        }
+        .fm .ex {
+          display: none;
+        }
+        .cases,
+        .calls {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(var(--u) * 1.4);
+        }
+        .case p {
+          font-size: 13.5px;
+        }
+        .bars {
+          height: calc(var(--u) * 30);
+        }
+        .phone {
+          display: none;
+        }
+        .s-hero {
+          padding-right: var(--gutter);
+        }
+        .hero-ph,
+        .pl-ph,
+        .ph {
