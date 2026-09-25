@@ -2176,3 +2176,42 @@
         font-size: 1.3em;
       }
 
+      /* full-bleed closing */
+      .s-bleed {
+        color: var(--paper);
+        justify-content: flex-end;
+      }
+      .bleed {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+      }
+      .bleed::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(21, 49, 42, 0.7) 0%,
+          rgba(21, 49, 42, 0.55) 45%,
+          rgba(21, 49, 42, 0.94) 100%
+        );
+      }
+      .s-bleed .inner {
+        position: relative;
+        max-width: min(100%, calc(var(--u) * 86));
+      }
+      .s-law .grid2 {
+        align-items: center;
+      }
+      .s-bleed .h2 {
+        font-size: calc(var(--u) * 4.4);
+        line-height: 1.05;
+      }
+      .s-bleed .tag {
+        color: rgba(243, 237, 226, 0.75);
+      }
+      .sources + .sources {
+        margin-top: calc(var(--u) * 0.8);
+      }
+
