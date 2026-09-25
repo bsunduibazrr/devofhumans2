@@ -4662,3 +4662,35 @@
             spin.rotation.y = spinC + (reduce ? 0 : time * 0.12) + par.x * 0.35;
             canvas.style.opacity = st.o.toFixed(3);
 
+            const drain = Math.min(1, st.sand * 1.02);
+            const topN = Math.floor(SANDN * (1 - drain)),
+              botN = Math.floor(SANDN * drain);
+            topSand.g.setDrawRange(0, topN);
+            botSand.g.setDrawRange(0, botN);
+            const floorY = botN > 0 ? botSand.ys[botN - 1] : -1.47;
+            const flowing = topN > 30 && drain > 0.002;
+            for (let i = 0; i < SN; i++) {
+              const ph = (phase[i] + time * 0.9) % 1;
+              sp[i * 3] = flowing ? Math.sin(i * 12.9) * 0.012 : 0;
+              sp[i * 3 + 1] = flowing ? 0.02 - ph * (0.02 - floorY) : 99;
+              sp[i * 3 + 2] = flowing ? Math.cos(i * 7.3) * 0.012 : 0;
+            }
+            sg.attributes.position.needsUpdate = true;
+            renderer.render(scene, camera);
+            requestAnimationFrame(frame);
+          })();
+          return api;
+        }
+        const three = initThree();
+
+        /* ---------- boot ---------- */
+        const h = parseInt((location.hash || "").slice(1), 10);
+        const startAt = h >= 1 && h <= N ? h - 1 : 0;
+        const loader = $(".loader");
+
+        const ln = $("#ln"),
+          lbar = $("#lbar"),
+          lstat = $("#lstat"),
+          lcnt = $("#lcnt"),
+          lmasks = $$(".loader .m > *");
+
