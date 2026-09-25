@@ -3704,3 +3704,31 @@
                 stagger: 0.08,
               },
               0.45,
+            );
+          q("[data-count]").forEach((el) => {
+            const o = { v: 0 },
+              to = +el.dataset.count;
+            tl.to(
+              o,
+              {
+                v: to,
+                duration: 1.6,
+                ease: "power3.out",
+                onUpdate: () => (el.textContent = Math.round(o.v)),
+              },
+              0.3,
+            );
+          });
+          q("[data-frac]").forEach((el) => {
+            tl.fromTo(
+              el,
+              { scale: 0.35, rotate: -8, opacity: 0 },
+              {
+                scale: 1,
+                rotate: 0,
+                opacity: 1,
+                duration: 1.5,
+                ease: "expo.out",
+              },
+              0,
+            );
