@@ -733,3 +733,32 @@
         margin-top: calc(var(--u) * 3);
       }
       .age {
+        border-top: 1px solid var(--ink);
+        padding-top: 10px;
+        min-width: calc(var(--u) * 12);
+      }
+      .age .n {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: calc(var(--u) * 10);
+        line-height: 0.85;
+        letter-spacing: -0.04em;
+        font-variant-numeric: tabular-nums;
+      }
+      .age .l {
+        margin-top: 8px;
+        color: var(--ink-2);
+      }
+      .note {
+        margin-top: calc(var(--u) * 1.6);
+        color: var(--mute);
+        max-width: 34ch;
+      }
+      .law .mono {
+        color: var(--ink-2);
+        margin-bottom: calc(var(--u) * 1);
+      }
+      .art {
+        display: grid;
+        grid-template-columns: calc(var(--u) * 5) minmax(0, 1fr);
+        gap: 1rem;
