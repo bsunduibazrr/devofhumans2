@@ -4048,3 +4048,33 @@
           }),
         );
 
+        /* ---------- discussion timer ---------- */
+        $$(".timer").forEach((b) => {
+          const total = +b.dataset.timer;
+          const tt = $(".tt", b);
+          let iv = null;
+          const fmt = (t) => `${Math.floor(t / 60)}:${pad(t % 60)}`;
+          b.addEventListener("click", () => {
+            if (iv) {
+              clearInterval(iv);
+              iv = null;
+              b.classList.remove("done");
+              tt.textContent = fmt(total);
+              b.style.setProperty("--p", 0);
+              return;
+            }
+            let left = total;
+            b.classList.remove("done");
+            iv = setInterval(() => {
+              left--;
+              tt.textContent = fmt(Math.max(0, left));
+              b.style.setProperty("--p", 1 - left / total);
+              if (left <= 0) {
+                clearInterval(iv);
+                iv = null;
+                b.classList.add("done");
+              }
+            }, 1000);
+          });
+        });
+
