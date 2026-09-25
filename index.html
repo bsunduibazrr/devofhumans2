@@ -2102,3 +2102,22 @@
         font-size: max(13.5px, calc(var(--u) * 1.05));
       }
 
+      /* act columns */
+      .cols3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: calc(var(--u) * 3.4);
+        margin-top: calc(var(--u) * 3);
+      }
+      .col > .mono {
+        display: block;
+        color: var(--accent);
+        margin-bottom: calc(var(--u) * 0.8);
+      }
+      .col .todo li {
+        font-size: max(15px, calc(var(--u) * 1.4));
+      }
+      .col:last-child .todo li:last-child {
+        font-weight: 500;
+      }
+
