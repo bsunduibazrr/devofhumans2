@@ -507,3 +507,31 @@
       .loader-mid em {
         color: rgba(243, 237, 226, 0.55);
       }
+      .loader-foot {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 1.5rem;
+      }
+      .loader .m > .loader-num {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: min(30vw, 40vh);
+        line-height: 0.78;
+        font-variant-numeric: tabular-nums lining-nums;
+        letter-spacing: -0.045em;
+        display: flex;
+        align-items: flex-start;
+        margin-left: -0.04em;
+      }
+      .loader-num sup {
+        font-family: var(--mono);
+        font-size: max(0.8rem, calc(var(--u) * 1.4));
+        letter-spacing: 0.06em;
+        line-height: 1;
+        margin: 0.35em 0 0 0.6em;
+        color: rgba(243, 237, 226, 0.62);
+      }
+      .loader-stat {
+        font-family: var(--mono);
+        font-size: 0.72rem;
