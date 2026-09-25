@@ -1804,3 +1804,43 @@
         color: var(--ink-2);
       }
 
+      /* place list + photo */
+      .pl {
+        list-style: none;
+        padding: 0;
+        margin-top: calc(var(--u) * 1.8);
+        max-width: 40ch;
+      }
+      .pl li {
+        padding: calc(var(--u) * 0.6) 0 calc(var(--u) * 0.6) 1.6em;
+        position: relative;
+        font-size: max(15px, calc(var(--u) * 1.4));
+        color: var(--ink-2);
+      }
+      .pl li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1.2em;
+        width: 0.7em;
+        height: 1px;
+        background: var(--accent);
+      }
+      .place-h {
+        font-style: italic;
+        font-weight: 400;
+      }
+      .pl-ph {
+        position: absolute;
+        top: max(70px, 12vh);
+        bottom: max(120px, 18vh);
+        right: var(--gutter);
+        width: 34%;
+      }
+      .pl-ph img {
+        border-radius: 2px;
+      }
+      .s-place .place-word {
+        font-size: calc(var(--u) * 9.5);
+      }
+
