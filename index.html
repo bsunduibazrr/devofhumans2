@@ -139,3 +139,32 @@
       }
       .chrome.top {
         top: 0;
+        padding-top: calc(env(safe-area-inset-top, 0px) + max(16px, 2.6vh));
+      }
+      .chrome.bottom {
+        bottom: 0;
+        padding-bottom: calc(
+          env(safe-area-inset-bottom, 0px) + max(14px, 2.4vh)
+        );
+      }
+      .counter {
+        display: flex;
+        gap: 0.9em;
+        align-items: center;
+      }
+      .counter .roll {
+        display: inline-block;
+        overflow: hidden;
+        height: 1.3em;
+        line-height: 1.3em;
+      }
+      .counter b {
+        display: inline-block;
+        font-weight: 500;
+        font-variant-numeric: tabular-nums;
+      }
+      .keys {
+        display: flex;
+        gap: 1.4em;
+        align-items: center;
+      }
