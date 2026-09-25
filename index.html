@@ -3930,3 +3930,31 @@
             G.delayedCall(0.85, () => {
               busy = false;
             });
+            return;
+          }
+          // between sections: ink curtain that names the next slide
+          cn.textContent = inn.dataset.name;
+          cc.textContent = pad(i + 1) + " / " + pad(N);
+          const from = d > 0 ? "inset(100% 0% 0% 0%)" : "inset(0% 0% 100% 0%)";
+          const to = d > 0 ? "inset(0% 0% 100% 0%)" : "inset(100% 0% 0% 0%)";
+          G.timeline({
+            onComplete: () => {
+              busy = false;
+            },
+          })
+            .to(
+              out,
+              { y: -70 * d, opacity: 0.2, duration: 0.55, ease: "power3.in" },
+              0,
+            )
+            .fromTo(
+              curtain,
+              { clipPath: from },
+              {
+                clipPath: "inset(0% 0% 0% 0%)",
+                duration: 0.55,
+                ease: "power3.inOut",
+              },
+              0,
+            )
+            .fromTo(
