@@ -4620,3 +4620,17 @@
           );
           let lastT = performance.now();
 
+          (function frame(now) {
+            const T = target();
+            if (!api.ready) T.s = 0.15;
+            const k = reduce ? 1 : 0.05;
+            KEYS.forEach(
+              (key) =>
+                (st[key] +=
+                  (T[key] - st[key]) * (key === "sand" && !reduce ? 0.03 : k)),
+            );
+            par.x += (mouse.nx - par.x) * 0.05;
+            par.y += (mouse.ny - par.y) * 0.05;
+            spinC += (spinT - spinC) * (reduce ? 1 : 0.045);
+            const time = ((now || t0) - t0) / 1000;
+
