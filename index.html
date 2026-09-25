@@ -4100,3 +4100,32 @@
             ["ArrowRight", "ArrowDown", "PageDown", "Enter"].includes(k) ||
             (k === " " && !e.shiftKey)
           ) {
+            e.preventDefault();
+            next();
+          } else if (
+            ["ArrowLeft", "ArrowUp", "PageUp", "Backspace"].includes(k) ||
+            (k === " " && e.shiftKey)
+          ) {
+            e.preventDefault();
+            prev();
+          } else if (k === "Home") {
+            e.preventDefault();
+            go(0);
+          } else if (k === "End") {
+            e.preventDefault();
+            go(N - 1);
+          } else if (/^[1-9]$/.test(k)) go(+k - 1);
+          else if (k === "n" || k === "N") {
+            notesOn = !notesOn;
+            renderNotes();
+          } else if (k === "f" || k === "F") {
+            try {
+              if (document.fullscreenElement) document.exitFullscreen();
+              else document.documentElement.requestFullscreen().catch(() => {});
+            } catch (err) {}
+          }
+        });
+        $("#next").addEventListener("click", next);
+        $("#prev").addEventListener("click", prev);
+        help.addEventListener("click", () => (help.hidden = true));
+
