@@ -4505,3 +4505,22 @@
           );
           spin.add(new THREE.LineSegments(mg, faint));
 
+          // sand as stippled points
+          const dot = (() => {
+            const c = document.createElement("canvas");
+            c.width = c.height = 32;
+            const x = c.getContext("2d");
+            x.fillStyle = "#fff";
+            x.beginPath();
+            x.arc(16, 16, 14, 0, Math.PI * 2);
+            x.fill();
+            return new THREE.CanvasTexture(c);
+          })();
+          const sandMat = new THREE.PointsMaterial({
+            color: INK,
+            size: 0.03,
+            map: dot,
+            alphaTest: 0.5,
+            transparent: true,
+          });
+          const SANDN = 5200;
