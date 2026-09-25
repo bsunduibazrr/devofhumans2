@@ -4634,3 +4634,31 @@
             spinC += (spinT - spinC) * (reduce ? 1 : 0.045);
             const time = ((now || t0) - t0) / 1000;
 
+            const halfW = halfH * camera.aspect;
+            const base = Math.min(1, camera.aspect / 1.1 + 0.25);
+            root.position.set(
+              st.x * halfW,
+              st.y * halfH + (reduce ? 0 : Math.sin(time * 0.8) * 0.04),
+              0,
+            );
+            flipC += (flipT - flipC) * (reduce ? 1 : 0.035);
+            pulse *= 0.95;
+            root.scale.setScalar(
+              Math.max(
+                0.01,
+                st.s * base * (1 - Math.sin(pulse * Math.PI) * 0.12),
+              ),
+            );
+            root.rotation.set(st.rx + par.y * 0.14 + flipC, par.x * 0.1, st.rz);
+            const dt = Math.min(0.05, ((now || lastT) - lastT) / 1000);
+            lastT = now || lastT;
+            if (!reduce)
+              for (let i = 0; i < DN; i++) {
+                dpos[i * 3 + 1] -= dspd[i] * dt;
+                dpos[i * 3] += Math.sin(time * 0.6 + i) * 0.002 - par.x * 0.002;
+                if (dpos[i * 3 + 1] < -5.5) dpos[i * 3 + 1] = 5.5;
+              }
+            dg.attributes.position.needsUpdate = true;
+            spin.rotation.y = spinC + (reduce ? 0 : time * 0.12) + par.x * 0.35;
+            canvas.style.opacity = st.o.toFixed(3);
+
