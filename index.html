@@ -4576,3 +4576,47 @@
             Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) *
             camera.position.z;
 
+          const st = Object.assign({}, STATES.hero, {
+            s: animated ? 0.15 : STATES.hero.s,
+            sand: 0,
+          });
+          const par = { x: 0, y: 0 };
+          let spinT = 0,
+            spinC = 0;
+          const t0 = performance.now();
+          let flipT = 0,
+            flipC = 0,
+            pulse = 0;
+          api.onChange = (d, big) => {
+            spinT += d * Math.PI * 0.7;
+            if (big) flipT += d * Math.PI * 2;
+            pulse = 1;
+          };
+
+          // falling dust: loose grains drifting behind everything
+          const DN = 240,
+            dpos = new Float32Array(DN * 3),
+            dspd = [];
+          for (let i = 0; i < DN; i++) {
+            dpos[i * 3] = (Math.random() * 2 - 1) * 10;
+            dpos[i * 3 + 1] = (Math.random() * 2 - 1) * 5.5;
+            dpos[i * 3 + 2] = -1 - Math.random() * 6;
+            dspd.push(0.08 + Math.random() * 0.25);
+          }
+          const dg = new THREE.BufferGeometry();
+          dg.setAttribute("position", new THREE.BufferAttribute(dpos, 3));
+          scene.add(
+            new THREE.Points(
+              dg,
+              new THREE.PointsMaterial({
+                color: INK,
+                size: 0.035,
+                map: dot,
+                alphaTest: 0.5,
+                transparent: true,
+                opacity: 0.5,
+              }),
+            ),
+          );
+          let lastT = performance.now();
+
