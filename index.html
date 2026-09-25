@@ -2215,3 +2215,28 @@
         margin-top: calc(var(--u) * 0.8);
       }
 
+      /* speaker notes */
+      .notes-panel {
+        position: fixed;
+        left: var(--gutter);
+        right: var(--gutter);
+        bottom: calc(max(56px, 9vh) + 8px);
+        z-index: 70;
+        max-width: 780px;
+        margin-inline: auto;
+        background: var(--ink);
+        color: var(--paper);
+        padding: 18px 22px 20px;
+        border-left: 3px solid var(--accent);
+        box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.5);
+        font-size: 15px;
+        line-height: 1.55;
+      }
+      .notes-panel .mono {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        color: #e7a47c;
+        margin-bottom: 8px;
+      }
+
