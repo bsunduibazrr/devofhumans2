@@ -1356,3 +1356,35 @@
         content: "";
         position: absolute;
         left: 0;
+        right: 0;
+        top: 52%;
+        height: 1.5px;
+        background: var(--ink);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.8s var(--ease);
+      }
+      .quotes li:hover::after {
+        transform: scaleX(1);
+      }
+      .quotes li:hover {
+        color: var(--mute);
+      }
+
+      /* letter */
+      .s-letter {
+        align-items: flex-start;
+      }
+      .s-letter .inner {
+        width: min(100%, calc(var(--u) * 66));
+      }
+      .s-letter .big {
+        font-style: italic;
+      }
+      .s-letter .sign {
+        margin-top: calc(var(--u) * 1.8);
+        font-family: var(--serif);
+        font-style: italic;
+        font-size: calc(var(--u) * 2.4);
+      }
+
