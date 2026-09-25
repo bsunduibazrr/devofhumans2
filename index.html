@@ -3543,3 +3543,20 @@
       </section>
     </main>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script>
+      (() => {
+        const $ = (s, c = document) => c.querySelector(s);
+        const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+        const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const fine = matchMedia("(pointer: fine)").matches;
+        const G = window.gsap;
+        const animated = !!G && !reduce;
+
+        const slides = $$(".slide");
+        const N = slides.length;
+        $("#tot").textContent = String(N).padStart(2, "0");
+        let cur = 0,
+          busy = false;
+
