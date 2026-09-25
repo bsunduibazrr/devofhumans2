@@ -4129,3 +4129,25 @@
         $("#prev").addEventListener("click", prev);
         help.addEventListener("click", () => (help.hidden = true));
 
+        // wheel: one gesture = one slide
+        let lastNav = 0,
+          lastMag = 0,
+          lastWheel = 0;
+        addEventListener(
+          "wheel",
+          (e) => {
+            e.preventDefault();
+            const now = performance.now();
+            const dy =
+              Math.abs(e.deltaY) > Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+            const mag = Math.abs(dy);
+            const fresh = now - lastWheel > 180 || mag > lastMag * 1.6;
+            lastWheel = now;
+            lastMag = mag;
+            if (mag < 12 || !fresh || now - lastNav < 900 || busy) return;
+            lastNav = now;
+            dy > 0 ? next() : prev();
+          },
+          { passive: false },
+        );
+
