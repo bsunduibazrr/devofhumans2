@@ -2035,3 +2035,31 @@
         font-family: var(--serif);
         font-style: italic;
         font-size: calc(var(--u) * 3.4);
+        line-height: 1;
+        color: var(--accent);
+      }
+      .dp b {
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: calc(var(--u) * 2.6);
+        line-height: 1.08;
+      }
+      .dp-b {
+        font-size: max(14px, calc(var(--u) * 1.25));
+        opacity: 0;
+        transform: translateY(12px);
+        transition:
+          opacity 0.6s var(--ease),
+          transform 0.8s var(--ease);
+      }
+      .dp::after {
+        content: "+";
+        position: absolute;
+        right: calc(var(--u) * 1.6);
+        top: calc(var(--u) * 1.2);
+        font-family: var(--mono);
+        font-size: max(16px, calc(var(--u) * 1.6));
+        transition: transform 0.5s var(--ease);
+      }
+      .dp.open {
+        background: var(--ink);
