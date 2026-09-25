@@ -4288,3 +4288,41 @@
           requestAnimationFrame(uiLoop);
         })();
 
+        /* ---------- 3D hourglass ---------- */
+        const STATES = {
+          hero: { x: -0.05, y: -0.62, s: 0.26, rx: 0.16, rz: -0.14, o: 0 },
+          question: { x: 0.66, y: 0.02, s: 1.02, rx: 0.14, rz: -0.18, o: 1 },
+          story: { x: -0.6, y: 0.02, s: 0.8, rx: -0.25, rz: 0.38, o: 1 },
+          who: { x: 0.9, y: 0.66, s: 0.2, rx: 0.55, rz: 0.3, o: 0 },
+          law: { x: 0.84, y: 0.58, s: 0.32, rx: -0.4, rz: 0.25, o: 1 },
+          un: { x: 0.72, y: -0.02, s: 1.25, rx: 0.1, rz: -0.2, o: 0.14 },
+          rights: { x: 0.86, y: 0.6, s: 0.28, rx: 0.3, rz: -0.3, o: 1 },
+          spec: { x: 0.86, y: 0.58, s: 0.3, rx: -0.2, rz: 0.3, o: 1 },
+          where: { x: 0.74, y: 0.5, s: 0.42, rx: 0.3, rz: 0.18, o: 1 },
+          place: { x: 0.66, y: -0.02, s: 0.95, rx: 0.2, rz: 0, o: 1 },
+          abuse: { x: 0.86, y: 0.58, s: 0.3, rx: 0.4, rz: -0.3, o: 1 },
+          stat: { x: 0, y: 0, s: 1.55, rx: 0.04, rz: 0, o: 0.12 },
+          why: { x: 0.86, y: 0.58, s: 0.3, rx: -0.3, rz: -0.35, o: 1 },
+          chain: { x: 0.84, y: 0.56, s: 0.32, rx: 0.25, rz: 0.2, o: 1 },
+          case: { x: 0.02, y: 0.62, s: 0.26, rx: 0.3, rz: 0.3, o: 1 },
+          talk: { x: 0.86, y: 0.6, s: 0.28, rx: 0.12, rz: -0.4, o: 1 },
+          daily: { x: 0.86, y: 0.6, s: 0.28, rx: 0.2, rz: 0.2, o: 1 },
+          act: { x: 0.86, y: 0.58, s: 0.3, rx: 0.3, rz: 0.3, o: 1 },
+          steps: { x: 0.9, y: 0.66, s: 0.2, rx: 0.3, rz: 0.3, o: 0 },
+          end: { x: 0.64, y: 0, s: 1.05, rx: 0.16, rz: 0.05, o: 1 },
+          bleed: { x: 0.7, y: 0, s: 0.9, rx: 0.12, rz: 0, o: 0 },
+          final: { x: 0.68, y: 0, s: 0.95, rx: 0.12, rz: 0, o: 1 },
+        };
+        const MOBILE = {
+          hero: { y: 0.52, s: 0.5, o: 0.9 },
+          end: { y: -0.5, s: 0.5, o: 0.5 },
+          final: { y: 0.6, s: 0.4, o: 0.3 },
+          stat: { y: 0, s: 0.9, o: 0.1 },
+          bleed: { o: 0 },
+        };
+        const KEYS = ["x", "y", "s", "rx", "rz", "o", "sand"];
+        function target() {
+          const sl = slides[cur],
+            name = sl.dataset.state;
+          let S = Object.assign({}, STATES[name]);
+          if (sl.dataset.place != null) {
