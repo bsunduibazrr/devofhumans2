@@ -3869,3 +3869,36 @@
           );
         }
 
+        /* ---------- navigation ---------- */
+        const isPlace = (i) => slides[i].dataset.place != null;
+        const pad = (n) => String(n).padStart(2, "0");
+        const curtain = $(".curtain"),
+          cn = $("#cn span"),
+          cc = $("#cc");
+        function show(i, d) {
+          const out = slides[cur],
+            inn = slides[i];
+          const push = isPlace(cur) && isPlace(i);
+          cur = i;
+          updateChrome(d);
+          three.onChange(d, !push);
+          if (!animated) {
+            out.classList.remove("on");
+            inn.classList.add("on");
+            return;
+          }
+          busy = true;
+          if (push) {
+            // between the six places: sideways push
+            G.to(out, {
+              xPercent: -16 * d,
+              opacity: 0,
+              duration: 0.5,
+              ease: "power3.in",
+              onComplete: () => {
+                out.classList.remove("on");
+                G.set(out, { clearProps: "opacity,transform" });
+              },
+            });
+            G.delayedCall(0.38, () => {
+              inn.classList.add("on");
