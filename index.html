@@ -422,3 +422,30 @@
         background: var(--paper);
         padding: clamp(20px, 3vw, 40px);
         width: min(100%, 460px);
+      }
+      .help-box h3 {
+        font-family: var(--serif);
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .help-box dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.6rem 1.4rem;
+        margin: 0;
+      }
+      .help-box dt {
+        font-family: var(--mono);
+        font-size: 0.78rem;
+      }
+      .help-box dd {
+        margin: 0;
+        color: var(--ink-2);
+      }
+      .help-box kbd {
+        font-family: var(--mono);
+        border: 1px solid var(--ink);
+        border-radius: 4px;
+        padding: 0.05em 0.45em;
+      }
+
