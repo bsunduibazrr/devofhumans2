@@ -2121,3 +2121,35 @@
         font-weight: 500;
       }
 
+      /* four steps */
+      .s-steps .inner {
+        max-width: 56%;
+      }
+      .steps4 {
+        list-style: none;
+        padding: 0;
+      }
+      .steps4 li {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: calc(var(--u) * 5.6);
+        line-height: 1;
+        letter-spacing: -0.02em;
+        padding: calc(var(--u) * 0.9) 0;
+        border-top: 1px solid var(--rule);
+        display: flex;
+        align-items: baseline;
+        gap: calc(var(--u) * 2);
+      }
+      .steps4 li.x {
+        font-size: calc(var(--u) * 3.6);
+        color: var(--accent);
+        border-bottom: 1px solid var(--rule);
+      }
+      .steps4 li.x em {
+        font-style: italic;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 0.12em;
+      }
+
