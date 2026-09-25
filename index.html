@@ -705,3 +705,31 @@
         font-size: max(11px, calc(var(--u) * 1.1));
         letter-spacing: 0.08em;
         display: block;
+        margin-bottom: calc(var(--u) * 1.6);
+      }
+      .s-story .big {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 5);
+        line-height: 1.02;
+        letter-spacing: -0.015em;
+      }
+      .s-story .after {
+        margin-top: calc(var(--u) * 2.6);
+        font-size: calc(var(--u) * 1.6);
+        color: var(--ink-2);
+        max-width: 34ch;
+      }
+
+      /* 03 who */
+      .grid2 {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: calc(var(--u) * 6);
+        align-items: end;
+      }
+      .ages {
+        display: flex;
+        gap: calc(var(--u) * 4);
+        margin-top: calc(var(--u) * 3);
+      }
+      .age {
