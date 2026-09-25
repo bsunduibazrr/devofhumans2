@@ -3788,3 +3788,32 @@
             tl.to(
               o,
               {
+                m: 40,
+                duration: 1.6,
+                ease: "power3.out",
+                onUpdate: () =>
+                  (el.textContent =
+                    "07:" + String(Math.round(o.m)).padStart(2, "0")),
+              },
+              0.3,
+            );
+          });
+          // hand-drawn underline and circle
+          const marks = q(".scr path, .circ path");
+          if (marks.length)
+            tl.fromTo(
+              marks,
+              { strokeDashoffset: 1 },
+              {
+                strokeDashoffset: 0,
+                duration: 1.1,
+                ease: "power2.inOut",
+                stagger: 0.2,
+              },
+              0.95,
+            );
+          // checklist ticks one by one
+          q(".todo li").forEach((li, i) => {
+            li.classList.remove("done");
+            tl.add(() => li.classList.add("done"), 1.1 + i * 0.38);
+          });
