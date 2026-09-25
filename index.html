@@ -2240,3 +2240,24 @@
         margin-bottom: 8px;
       }
 
+      /* ---------- small screens ---------- */
+      @media (max-width: 760px) {
+        :root {
+          --u: min(2.35vw, 1.08vh);
+        }
+        .slide {
+          padding-block: max(64px, 10vh) max(80px, 12vh);
+        }
+        .s-hero {
+          justify-content: center;
+        }
+        .meta {
+          max-width: none;
+        }
+        .grid2 {
+          grid-template-columns: minmax(0, 1fr);
+          gap: calc(var(--u) * 3);
+        }
+        .pr {
+          grid-template-columns: minmax(0, 1fr);
+        }
