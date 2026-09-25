@@ -4552,3 +4552,27 @@
           for (let i = 0; i < SN; i++) phase.push(Math.random());
           const sg = new THREE.BufferGeometry();
           sg.setAttribute("position", new THREE.BufferAttribute(sp, 3));
+          spin.add(
+            new THREE.Points(
+              sg,
+              new THREE.PointsMaterial({
+                color: INK,
+                size: 0.022,
+                map: dot,
+                alphaTest: 0.5,
+                transparent: true,
+              }),
+            ),
+          );
+
+          function resize() {
+            renderer.setSize(innerWidth, innerHeight, false);
+            camera.aspect = innerWidth / innerHeight;
+            camera.updateProjectionMatrix();
+          }
+          addEventListener("resize", resize);
+          resize();
+          const halfH =
+            Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)) *
+            camera.position.z;
+
