@@ -4439,3 +4439,31 @@
             [1.25, 0.69],
             [1.4, 0.52],
             [1.5, 0.3],
+          ];
+          const prof = (y) => {
+            y = Math.abs(y);
+            for (let i = 0; i < TABLE.length - 1; i++) {
+              const [y0, r0] = TABLE[i],
+                [y1, r1] = TABLE[i + 1];
+              if (y <= y1) {
+                const t = (y - y0) / (y1 - y0);
+                return r0 + (r1 - r0) * (t * t * (3 - 2 * t) * 0.5 + t * 0.5);
+              }
+            }
+            return TABLE[TABLE.length - 1][1];
+          };
+          const pts = [];
+          for (let i = 0; i <= 90; i++) {
+            const y = -1.5 + (3 * i) / 90;
+            pts.push(V2(prof(y), y));
+          }
+          const rim = new THREE.ShaderMaterial({
+            transparent: true,
+            depthWrite: false,
+            side: THREE.DoubleSide,
+            uniforms: { uInk: { value: new THREE.Color(INK) } },
+            vertexShader:
+              "varying vec3 vN; varying vec3 vV; void main(){ vec4 mv = modelViewMatrix*vec4(position,1.0); vN = normalize(normalMatrix*normal); vV = normalize(-mv.xyz); gl_Position = projectionMatrix*mv; }",
+            fragmentShader:
+              "uniform vec3 uInk; varying vec3 vN; varying vec3 vV; void main(){ float f = 1.0-abs(dot(normalize(vN),normalize(vV))); float a = smoothstep(.78,.97,f); gl_FragColor = vec4(uInk, a*.95); }",
+          });
