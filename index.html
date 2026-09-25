@@ -784,3 +784,37 @@
         line-height: 1.15;
       }
 
+      /* 04 principles */
+      .prs {
+        margin-top: calc(var(--u) * 2.6);
+        max-width: 92%;
+      }
+      .pr {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 0.4rem 2rem;
+        align-items: baseline;
+        padding: calc(var(--u) * 1.05) 0;
+        border-top: 1px solid var(--rule);
+        position: relative;
+      }
+      .pr:last-child {
+        border-bottom: 1px solid var(--rule);
+      }
+      .pr::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: -1px;
+        height: 1px;
+        width: 100%;
+        background: var(--ink);
+        transform: scaleX(0);
+        transform-origin: 0 50%;
+        transition: transform 0.8s var(--ease);
+      }
+      .pr .nm {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 3.1);
+        line-height: 1;
+        transition: transform 0.7s var(--ease);
