@@ -584,3 +584,39 @@
         }
       }
 
+      /* ---------- deck ---------- */
+      .deck {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+      }
+      .slide {
+        position: absolute;
+        inset: 0;
+        visibility: hidden;
+        padding-inline: var(--gutter);
+        padding-block: max(70px, 12vh) max(76px, 12.5vh);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .slide.on {
+        visibility: visible;
+      }
+      .tag {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-family: var(--mono);
+        font-size: max(10.5px, calc(var(--u) * 0.78));
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-2);
+        margin-bottom: calc(var(--u) * 2.4);
+      }
+      .tag::after {
+        content: "";
+        flex: 0 1 calc(var(--u) * 9);
+        height: 1px;
+        background: currentColor;
