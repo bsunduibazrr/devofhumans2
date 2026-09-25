@@ -1243,3 +1243,28 @@
         letter-spacing: -0.03em;
         margin-bottom: calc(var(--u) * 0.8);
       }
+      .bar i {
+        display: block;
+        height: calc(var(--h) * 72%);
+        border: 1px solid var(--ink);
+        transform-origin: 50% 100%;
+        background: repeating-linear-gradient(
+          135deg,
+          transparent 0 6px,
+          rgba(21, 49, 42, 0.14) 6px 7px
+        );
+      }
+      .bar.on i {
+        background: var(--ink);
+      }
+      .bar .mono {
+        margin-top: 10px;
+        color: var(--ink-2);
+      }
+      .bar-cap {
+        grid-column: 1 / -1;
+        color: var(--mute);
+        border-top: 1px solid var(--rule);
+        padding-top: 10px;
+      }
+
