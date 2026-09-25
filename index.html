@@ -677,3 +677,31 @@
       .meta {
         margin-top: calc(var(--u) * 3.4);
         padding-top: 14px;
+        border-top: 1px solid var(--rule);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem 2.4rem;
+        max-width: 62%;
+        font-family: var(--mono);
+        font-size: max(10.5px, calc(var(--u) * 0.74));
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-2);
+      }
+      .meta b {
+        font-weight: 500;
+        color: var(--ink);
+      }
+
+      /* 02 story */
+      .s-story {
+        align-items: flex-end;
+      }
+      .s-story .inner {
+        width: min(100%, calc(var(--u) * 62));
+      }
+      .s-story .time {
+        font-family: var(--mono);
+        font-size: max(11px, calc(var(--u) * 1.1));
+        letter-spacing: 0.08em;
+        display: block;
