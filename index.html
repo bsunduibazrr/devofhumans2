@@ -3902,3 +3902,31 @@
             });
             G.delayedCall(0.38, () => {
               inn.classList.add("on");
+              G.fromTo(
+                inn,
+                { xPercent: 20 * d, opacity: 0 },
+                {
+                  xPercent: 0,
+                  opacity: 1,
+                  duration: 1,
+                  ease: "expo.out",
+                  clearProps: "transform,opacity",
+                },
+              );
+              enter(inn, d);
+            });
+            const wipe = $(".wipe");
+            G.fromTo(
+              wipe,
+              {
+                top: "50%",
+                opacity: 1,
+                scaleX: 0,
+                transformOrigin: d > 0 ? "100% 50%" : "0% 50%",
+              },
+              { scaleX: 1, duration: 0.5, ease: "expo.inOut" },
+            );
+            G.to(wipe, { opacity: 0, duration: 0.3, delay: 0.5 });
+            G.delayedCall(0.85, () => {
+              busy = false;
+            });
