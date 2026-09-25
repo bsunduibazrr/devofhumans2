@@ -1770,3 +1770,37 @@
         max-width: none;
       }
 
+      /* quad */
+      .quad {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: calc(var(--u) * 2);
+        margin-top: calc(var(--u) * 3.4);
+      }
+      .qd {
+        border-top: 1px solid var(--ink);
+        padding-top: calc(var(--u) * 1.2);
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .qd small,
+      .cz small,
+      .chain small,
+      .steps4 small {
+        font-family: var(--mono);
+        font-size: max(10px, calc(var(--u) * 0.72));
+        letter-spacing: 0.08em;
+        color: var(--accent);
+      }
+      .qd b {
+        font-family: var(--serif);
+        font-style: italic;
+        font-weight: 300;
+        font-size: calc(var(--u) * 4.4);
+        line-height: 1;
+      }
+      .qd span {
+        color: var(--ink-2);
+      }
+
