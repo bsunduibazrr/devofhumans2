@@ -449,3 +449,33 @@
         padding: 0.05em 0.45em;
       }
 
+      /* loader */
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        pointer-events: none;
+      }
+      .loader-bg,
+      .loader-under {
+        position: absolute;
+        inset: 0;
+        will-change: clip-path;
+      }
+      .loader-under {
+        background: #24493f;
+      }
+      .loader-bg {
+        background: var(--ink);
+      }
+      .loader-in {
+        position: absolute;
+        inset: 0;
+        color: var(--paper);
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: var(--gutter);
+        padding-top: calc(var(--gutter) + env(safe-area-inset-top, 0px));
+        padding-bottom: calc(var(--gutter) + env(safe-area-inset-bottom, 0px));
+      }
+      .loader .m {
