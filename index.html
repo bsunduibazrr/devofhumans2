@@ -3817,3 +3817,30 @@
             li.classList.remove("done");
             tl.add(() => li.classList.add("done"), 1.1 + i * 0.38);
           });
+          // question letters flip in
+          const ks = q(".q .k");
+          if (ks.length)
+            tl.fromTo(
+              ks,
+              { rotateX: -90, opacity: 0, transformPerspective: 400 },
+              {
+                rotateX: 0,
+                opacity: 1,
+                duration: 0.9,
+                ease: "back.out(2)",
+                stagger: 0.15,
+              },
+              0.55,
+            );
+          // reason rules draw across
+          const rs = q(".reason, .q, .age, .stat-row > div");
+          if (rs.length)
+            tl.fromTo(
+              rs,
+              { "--rule": 0 },
+              { "--rule": 1, duration: 1.2, ease: "expo.out", stagger: 0.08 },
+              0.3,
+            );
+          return tl;
+        }
+
