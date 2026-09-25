@@ -1723,3 +1723,32 @@
       }
       .spec-steps li::before {
         content: "";
+        position: absolute;
+        top: -8px;
+        left: 0;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background: var(--paper);
+        border: 1.5px solid var(--ink);
+      }
+      .spec-steps li.x::before {
+        border-color: var(--accent);
+        background: var(--accent);
+      }
+      .spec-steps li:nth-child(4) {
+        border-left: 1px dashed var(--accent);
+        padding-left: calc(var(--u) * 1.2);
+      }
+      .spec-steps li:nth-child(4)::before {
+        left: calc(var(--u) * 1.2);
+      }
+      .spec-steps b {
+        display: block;
+        font-family: var(--serif);
+        font-weight: 400;
+        font-size: calc(var(--u) * 2.5);
+        line-height: 1.05;
+      }
+      .spec-steps li.x b {
+        color: var(--accent);
