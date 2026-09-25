@@ -3675,3 +3675,32 @@
               },
               0.35,
             );
+          });
+          const ins = q("[data-in]");
+          if (ins.length)
+            tl.fromTo(
+              ins,
+              { opacity: 0, y: 34 * d },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 1.1,
+                ease: "expo.out",
+                stagger: 0.075,
+              },
+              0.3,
+            );
+          const pops = q("[data-pop]");
+          if (pops.length)
+            tl.fromTo(
+              pops,
+              { opacity: 0, scale: 0.6, y: 20 },
+              {
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                duration: 0.9,
+                ease: "back.out(1.7)",
+                stagger: 0.08,
+              },
+              0.45,
