@@ -4807,3 +4807,31 @@
                 duration: 1.05,
                 ease: "expo.inOut",
               },
+              0.72,
+            )
+            .add(() => {
+              three.ready = true;
+              G.set(slides[cur], { opacity: 1 });
+              enter(slides[cur], 1);
+            }, 1.15)
+            .add(() => {
+              loader.classList.add("done");
+              busy = false;
+            });
+        }
+
+        if (document.readyState === "complete") tick();
+        else addEventListener("load", tick, { once: true });
+        if (document.fonts && document.fonts.load) {
+          FACES.forEach((f) =>
+            document.fonts
+              .load(f, "АаӨөҮү")
+              .catch(() => {})
+              .then(tick),
+          );
+        } else done = TOTAL - (document.readyState === "complete" ? 0 : 1);
+        boot();
+      })();
+    </script>
+  </body>
+</html>
