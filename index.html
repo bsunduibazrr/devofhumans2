@@ -3590,3 +3590,34 @@
         function splitChars(el) {
           const words = el.textContent.trim().split(/\s+/);
           el.textContent = "";
+          words.forEach((w, wi) => {
+            const o = document.createElement("span");
+            o.className = "cw";
+            [...w].forEach((ch) => {
+              const c = document.createElement("span");
+              c.className = "ci";
+              c.textContent = ch;
+              o.append(c);
+            });
+            el.append(o);
+            if (wi < words.length - 1) el.append(document.createTextNode(" "));
+          });
+        }
+        $$("[data-split], [data-read]").forEach(splitWords);
+        $$("[data-chars]").forEach(splitChars);
+
+        /* place navigator on the six place slides */
+        const placeSlides = $$("[data-place]");
+        placeSlides.forEach((s) => {
+          const nav = document.createElement("div");
+          nav.className = "pnav";
+          nav.setAttribute("aria-hidden", "true");
+          placeSlides.forEach((p, i) => {
+            const sp = document.createElement("span");
+            sp.textContent = p.dataset.name;
+            if (i === +s.dataset.place) sp.className = "on";
+            nav.append(sp);
+          });
+          s.append(nav);
+        });
+
