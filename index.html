@@ -4467,3 +4467,41 @@
             fragmentShader:
               "uniform vec3 uInk; varying vec3 vN; varying vec3 vV; void main(){ float f = 1.0-abs(dot(normalize(vN),normalize(vV))); float a = smoothstep(.78,.97,f); gl_FragColor = vec4(uInk, a*.95); }",
           });
+          spin.add(new THREE.Mesh(new THREE.LatheGeometry(pts, 64), rim));
+          const merid = [];
+          for (let m = 0; m < 18; m++) {
+            const a = (m / 18) * Math.PI * 2,
+              c = Math.cos(a),
+              s = Math.sin(a);
+            for (let i = 0; i < pts.length - 1; i++)
+              merid.push(
+                pts[i].x * c,
+                pts[i].y,
+                pts[i].x * s,
+                pts[i + 1].x * c,
+                pts[i + 1].y,
+                pts[i + 1].x * s,
+              );
+          }
+          [-1.05, -0.45, 0.45, 1.05, -1.47, 1.47].forEach((y) => {
+            const r = prof(y);
+            for (let i = 0; i < 64; i++) {
+              const a0 = (i / 64) * Math.PI * 2,
+                a1 = ((i + 1) / 64) * Math.PI * 2;
+              merid.push(
+                Math.cos(a0) * r,
+                y,
+                Math.sin(a0) * r,
+                Math.cos(a1) * r,
+                y,
+                Math.sin(a1) * r,
+              );
+            }
+          });
+          const mg = new THREE.BufferGeometry();
+          mg.setAttribute(
+            "position",
+            new THREE.Float32BufferAttribute(merid, 3),
+          );
+          spin.add(new THREE.LineSegments(mg, faint));
+
