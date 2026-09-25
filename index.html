@@ -1599,3 +1599,46 @@
         color: var(--mute);
       }
 
+      /* who */
+      .who-grid {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        align-items: center;
+      }
+      .pts {
+        list-style: none;
+        padding: 0;
+        margin-top: calc(var(--u) * 2.4);
+        max-width: 44ch;
+      }
+      .pts li {
+        padding: calc(var(--u) * 0.9) 0 calc(var(--u) * 0.9) 1.6em;
+        border-top: 1px solid var(--rule);
+        position: relative;
+        font-size: max(15px, calc(var(--u) * 1.35));
+      }
+      .pts li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 1.45em;
+        width: 0.7em;
+        height: 1px;
+        background: var(--accent);
+      }
+      .keymsg {
+        margin: calc(var(--u) * 2.4) 0 0;
+        padding: calc(var(--u) * 1.8) calc(var(--u) * 2.2);
+        background: var(--ink);
+        color: var(--paper);
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 2.3);
+        line-height: 1.18;
+        max-width: 34ch;
+        border-left: 3px solid var(--accent);
+      }
+      .ph img {
+        aspect-ratio: 4 / 3;
+        height: auto;
+        border-radius: 2px;
+      }
+
