@@ -1667,3 +1667,27 @@
       .rc:hover {
         border-color: var(--ink);
         transform: translateY(-4px);
+      }
+      .rc.hi {
+        background: var(--ink);
+        color: var(--paper);
+        border-color: var(--ink);
+      }
+      .ic {
+        width: calc(var(--u) * 3.2);
+        height: calc(var(--u) * 3.2);
+        min-width: 26px;
+        min-height: 26px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .rc .ic {
+        color: var(--accent);
+      }
+      .rc.hi .ic {
+        color: #e7a47c;
+      }
+
