@@ -3995,3 +3995,20 @@
         const next = () => go(cur + 1),
           prev = () => go(cur - 1);
 
+        function updateChrome(d) {
+          const c = $("#cur");
+          c.textContent = String(cur + 1).padStart(2, "0");
+          if (animated)
+            G.fromTo(
+              c,
+              { yPercent: 100 * d },
+              { yPercent: 0, duration: 0.8, ease: "expo.out" },
+            );
+          $("#curName").textContent = slides[cur].dataset.name;
+          if (typeof renderNotes === "function" && notesOn) renderNotes();
+          $(".progress").style.transform = `scaleX(${cur / (N - 1)})`;
+          try {
+            history.replaceState(null, "", "#" + (cur + 1));
+          } catch (e) {}
+        }
+
