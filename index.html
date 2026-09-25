@@ -4213,3 +4213,31 @@
                 rotateX: -y * 10,
                 transformPerspective: 800,
                 duration: 0.5,
+                ease: "power3.out",
+              });
+            });
+            el.addEventListener("pointerleave", () =>
+              G.to(el, {
+                rotateY: 0,
+                rotateX: 0,
+                duration: 1,
+                ease: "elastic.out(1, .5)",
+              }),
+            );
+          });
+          $$(".nav button, .chip, .places span").forEach((el) => {
+            el.addEventListener("pointermove", (e) => {
+              const r = el.getBoundingClientRect();
+              G.to(el, {
+                x: (e.clientX - r.left - r.width / 2) * 0.35,
+                y: (e.clientY - r.top - r.height / 2) * 0.35,
+                duration: 0.4,
+                ease: "power3.out",
+              });
+            });
+            el.addEventListener("pointerleave", () =>
+              G.to(el, { x: 0, y: 0, duration: 1, ease: "elastic.out(1, .4)" }),
+            );
+          });
+        }
+        // layered mouse parallax: big type drifts more than small type
