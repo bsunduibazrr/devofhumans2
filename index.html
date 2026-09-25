@@ -253,3 +253,41 @@
         width: 8px;
         height: 8px;
         margin: -4px 0 0 -4px;
+      }
+      .ring {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 38px;
+        height: 38px;
+        margin: -19px 0 0 -19px;
+        border-radius: 50%;
+        border: 1px solid #fff;
+        mix-blend-mode: difference;
+        z-index: 70;
+        pointer-events: none;
+        display: none;
+        transition:
+          width 0.5s var(--ease),
+          height 0.5s var(--ease),
+          margin 0.5s var(--ease),
+          background 0.5s var(--ease);
+      }
+      .ring.big {
+        width: 84px;
+        height: 84px;
+        margin: -42px 0 0 -42px;
+        background: #fff;
+      }
+      .ring.press {
+        width: 26px;
+        height: 26px;
+        margin: -13px 0 0 -13px;
+      }
+      @media (pointer: fine) {
+        .cursor,
+        .ring {
+          display: block;
+        }
+      }
+
