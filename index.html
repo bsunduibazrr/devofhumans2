@@ -2261,3 +2261,31 @@
         .pr {
           grid-template-columns: minmax(0, 1fr);
         }
+        .prs,
+        .why-grid,
+        .qs {
+          max-width: none;
+        }
+        .places {
+          grid-template-columns: repeat(2, minmax(0, max-content));
+        }
+        .why-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .stat-row {
+          flex-direction: column;
+          align-items: center;
+          gap: calc(var(--u) * 2);
+        }
+        .stat-row > div {
+          width: min(100%, 320px);
+        }
+        .names {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .forms,
+        .calls {
+          max-width: none;
+        }
+        .fm {
+          grid-template-columns: minmax(0, 1fr) auto;
