@@ -535,3 +535,32 @@
       .loader-stat {
         font-family: var(--mono);
         font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-align: right;
+        color: rgba(243, 237, 226, 0.62);
+        padding-bottom: 0.4em;
+      }
+      .loader-stat b {
+        font-weight: 500;
+        color: var(--paper);
+      }
+      .loader-bar {
+        position: relative;
+        height: 1px;
+        margin-top: 22px;
+        background: rgba(243, 237, 226, 0.16);
+      }
+      .loader-bar i {
+        position: absolute;
+        inset: 0;
+        background: var(--paper);
+        transform-origin: 0 50%;
+        transform: scaleX(0);
+      }
+      .loader-bar i::after {
+        content: "";
+        position: absolute;
+        right: -3px;
+        top: -3px;
+        width: 7px;
