@@ -1388,3 +1388,29 @@
         font-size: calc(var(--u) * 2.4);
       }
 
+      /* abroad */
+      .cases {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: calc(var(--u) * 3.4);
+        margin-top: calc(var(--u) * 3);
+      }
+      .case {
+        border-top: 1px solid var(--ink);
+        padding-top: calc(var(--u) * 1.2);
+      }
+      .case .mono {
+        color: var(--mute);
+      }
+      .case h3 {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 2.7);
+        line-height: 1.05;
+        margin-top: calc(var(--u) * 0.8);
+      }
+      .case p {
+        margin-top: calc(var(--u) * 1);
+        color: var(--ink-2);
+        font-size: max(14px, calc(var(--u) * 1.15));
+      }
+
