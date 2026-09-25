@@ -168,3 +168,31 @@
         gap: 1.4em;
         align-items: center;
       }
+      .keys kbd {
+        font-family: inherit;
+        border: 1px solid currentColor;
+        border-radius: 4px;
+        padding: 0.1em 0.45em;
+        margin-right: 0.35em;
+      }
+      .nav {
+        display: flex;
+        gap: 6px;
+        pointer-events: auto;
+      }
+      .nav button {
+        all: unset;
+        cursor: pointer;
+        width: 38px;
+        height: 38px;
+        border: 1px solid currentColor;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+        transition:
+          background 0.4s var(--ease),
+          color 0.4s var(--ease);
+      }
+      .nav button:hover {
+        background: #fff;
