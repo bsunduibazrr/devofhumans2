@@ -1213,3 +1213,33 @@
         line-height: 1.5;
       }
 
+      /* shared lead */
+      .lead2 {
+        margin-top: calc(var(--u) * 1.8);
+        font-size: calc(var(--u) * 1.5);
+        color: var(--ink-2);
+        max-width: 40ch;
+      }
+
+      /* world bars */
+      .bars {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: end;
+        gap: calc(var(--u) * 2.2);
+        height: calc(var(--u) * 40);
+      }
+      .bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100%;
+      }
+      .bar b {
+        font-family: var(--serif);
+        font-weight: 300;
+        font-size: calc(var(--u) * 4.4);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        margin-bottom: calc(var(--u) * 0.8);
+      }
