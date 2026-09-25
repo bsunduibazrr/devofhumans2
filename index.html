@@ -4388,3 +4388,20 @@
           };
           const V2 = (x, y) => new THREE.Vector2(x, y);
 
+          // wooden plates
+          const plate = [
+            V2(0, -0.11),
+            V2(1.04, -0.11),
+            V2(1.1, -0.07),
+            V2(1.1, 0.01),
+            V2(1.02, 0.05),
+            V2(0.94, 0.11),
+            V2(0, 0.11),
+          ];
+          const bottom = inked(new THREE.LatheGeometry(plate, 56));
+          bottom.position.y = -1.62;
+          const top = inked(new THREE.LatheGeometry(plate, 56));
+          top.position.y = 1.62;
+          top.rotation.x = Math.PI;
+          spin.add(bottom, top);
+
