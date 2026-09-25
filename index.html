@@ -111,3 +111,31 @@
         }
         60% {
           transform: translate(-2%, -1%);
+        }
+        80% {
+          transform: translate(3%, 3%);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+      }
+      .chrome {
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        pointer-events: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding-inline: var(--gutter);
+        font-family: var(--mono);
+        font-size: max(10px, calc(var(--u) * 0.74));
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #fff;
+        mix-blend-mode: difference;
+      }
+      .chrome.top {
+        top: 0;
