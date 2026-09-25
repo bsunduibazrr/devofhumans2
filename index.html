@@ -1186,3 +1186,30 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
         border-top: 1px solid var(--ink);
       }
+      .names li {
+        padding: calc(var(--u) * 1.1) 0;
+        border-bottom: 1px solid var(--rule);
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 2.2);
+        line-height: 1.1;
+        transition: transform 0.6s var(--ease);
+      }
+      .names li:hover {
+        transform: translateX(0.3em);
+        font-style: italic;
+      }
+      .team-cap {
+        margin-top: calc(var(--u) * 3.2);
+        color: var(--ink-2);
+      }
+      .team-cap + .names {
+        margin-top: calc(var(--u) * 0.9);
+      }
+      .sources {
+        margin-top: calc(var(--u) * 2.4);
+        font-size: max(11px, calc(var(--u) * 0.82));
+        color: var(--mute);
+        max-width: 70ch;
+        line-height: 1.5;
+      }
+
