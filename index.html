@@ -4326,3 +4326,36 @@
             name = sl.dataset.state;
           let S = Object.assign({}, STATES[name]);
           if (sl.dataset.place != null) {
+            const k = +sl.dataset.place;
+            S.rz = (k % 2 ? -1 : 1) * (0.12 + k * 0.04);
+            S.rx = 0.12 + (k % 3) * 0.1;
+          }
+          if (innerWidth < 760)
+            S = Object.assign(
+              S,
+              { x: 0, y: 0.62, s: 0.34, o: 0.16 },
+              MOBILE[name] || {},
+            );
+          S.sand = cur / (N - 1);
+          return S;
+        }
+
+        function initThree() {
+          const api = { ready: !animated, onChange() {} };
+          if (!window.THREE) return api;
+          const canvas = $("#gl");
+          let renderer;
+          try {
+            renderer = new THREE.WebGLRenderer({
+              canvas,
+              antialias: true,
+              alpha: true,
+            });
+          } catch (e) {
+            return api;
+          }
+          renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
+          camera.position.set(0, 0, 11);
+
