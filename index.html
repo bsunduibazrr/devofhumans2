@@ -226,3 +226,30 @@
         pointer-events: none;
       }
 
+      .cursor {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        margin: -6px 0 0 -6px;
+        border-radius: 50%;
+        background: #fff;
+        mix-blend-mode: difference;
+        z-index: 70;
+        pointer-events: none;
+        transition:
+          width 0.45s var(--ease),
+          height 0.45s var(--ease),
+          margin 0.45s var(--ease);
+        display: none;
+      }
+      .cursor {
+        width: 8px;
+        height: 8px;
+        margin: -4px 0 0 -4px;
+      }
+      .cursor.big {
+        width: 8px;
+        height: 8px;
+        margin: -4px 0 0 -4px;
