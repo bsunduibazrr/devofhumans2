@@ -4359,3 +4359,32 @@
           const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 100);
           camera.position.set(0, 0, 11);
 
+          const INK = 0x15312a,
+            PAPER = 0xf3ede2;
+          const root = new THREE.Group(),
+            spin = new THREE.Group();
+          root.add(spin);
+          scene.add(root);
+
+          const solid = new THREE.MeshBasicMaterial({
+            color: PAPER,
+            polygonOffset: true,
+            polygonOffsetFactor: 1,
+            polygonOffsetUnits: 1,
+          });
+          const line = new THREE.LineBasicMaterial({ color: INK });
+          const faint = new THREE.LineBasicMaterial({
+            color: INK,
+            transparent: true,
+            opacity: 0.22,
+          });
+          const inked = (geo, thr = 25) => {
+            const g = new THREE.Group();
+            g.add(new THREE.Mesh(geo, solid));
+            g.add(
+              new THREE.LineSegments(new THREE.EdgesGeometry(geo, thr), line),
+            );
+            return g;
+          };
+          const V2 = (x, y) => new THREE.Vector2(x, y);
+
