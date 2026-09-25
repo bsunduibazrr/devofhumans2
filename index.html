@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>Бидний эрх хаана</title>
+    <title>Seminar3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -2508,7 +2508,6 @@
           </div>
           <div class="loader-bar"><i id="lbar"></i></div>
           <div class="loader-row loader-cap">
-            <span class="m"><span>Ахмад насны босго</span></span>
             <span class="m"><span id="lcnt">00 / 12</span></span>
           </div>
         </div>
@@ -2539,27 +2538,7 @@
     </div>
     <div class="progress" aria-hidden="true"></div>
 
-    <div class="help" id="help" hidden>
-      <div class="help-box" role="dialog" aria-label="Товчлол">
-        <h3>Товчлол</h3>
-        <dl>
-          <dt><kbd>→</kbd> <kbd>↓</kbd> <kbd>Space</kbd></dt>
-          <dd>Дараагийн слайд</dd>
-          <dt><kbd>←</kbd> <kbd>↑</kbd></dt>
-          <dd>Өмнөх слайд</dd>
-          <dt><kbd>Home</kbd> <kbd>End</kbd></dt>
-          <dd>Эхний / сүүлийн слайд</dd>
-          <dt><kbd>1</kbd>–<kbd>9</kbd></dt>
-          <dd>Тухайн дугаартай слайд руу</dd>
-          <dt><kbd>N</kbd></dt>
-          <dd>Илтгэгчийн тэмдэглэл</dd>
-          <dt><kbd>F</kbd></dt>
-          <dd>Бүтэн дэлгэц</dd>
-          <dt><kbd>Esc</kbd></dt>
-          <dd>Энэ цонхыг хаах</dd>
-        </dl>
-      </div>
-    </div>
+    <div class="help" id="help" hidden></div>
 
     <main class="deck">
       <!-- ===== Илтгэгч 1 · Танилцуулга ===== -->
@@ -2596,11 +2575,7 @@
           <span class="ln">байна вэ?</span>
         </h1>
         <div class="who" data-split>— Ахмад настны эрх</div>
-        <div class="meta" data-in>
-          <span>Хүний хөгжил</span>
-          <span>1-р курс</span>
-          <span>Баг · <b>6</b> гишүүн</span>
-        </div>
+
         <aside class="notes" data-who="1">
           Сайн байцгаана уу. Бид өнөөдөр ахмад настны эрхийн тухай ярина. Энэ
           сэдэв бидэнд хол мэт санагдаж болох ч үнэндээ гэр бүл бүрт өдөр бүр
@@ -2636,7 +2611,6 @@
         <div class="vote" data-in>
           <button class="vbtn" type="button"><span>Тийм</span><b>0</b></button>
           <button class="vbtn" type="button"><span>Үгүй</span><b>0</b></button>
-          <span class="vhint mono">Гараа өргөөрэй · товч дээр дарж тоолно</span>
         </div>
         <aside class="notes" data-who="1">
           Эхлээд танхимаас нэг асуулт асууя. Нас ахисан гэдэг нь хүний эрх
@@ -2692,13 +2666,17 @@
             </h2>
             <ul class="pts">
               <li data-in>
-                Ахмад нас бол өвчин биш, амьдралын жам ёсны нэг үе.
+                насны хувьд өндөр болж, ихэвчлэн тэтгэвэрт гарсан, нийгэмд олон
+                жил ажиллаж амьдралын туршлага хуримтлуулсан хүн
               </li>
               <li data-in>
-                Тэд бусдын адил эрх, нэр төр, үзэл бодол, сонголттой.
+                олон жилийн хөдөлмөр, амьдралын туршлагатай бөгөөд гэр бүл,
+                нийгэмд өөрийн хувь нэмрээ оруулсан өндөр настай иргэн
               </li>
               <li data-in>
-                Зөвхөн "асаргаа шаарддаг хүн" гэж харах нь өрөөсгөл.
+                нас ахиж, бие болон нийгмийн амьдралын хэрэгцээ нь тодорхой
+                хэмжээнд өөрчлөгдсөн, хамгаалал халамж шаардлагатай байж болох
+                иргэн
               </li>
             </ul>
             <blockquote class="keymsg" data-in>
@@ -2711,7 +2689,6 @@
               src="img/naadam.jpg"
               alt="Сайхан дээл өмссөн ахмад эрэгтэй наадам үзэж байна"
             />
-            <figcaption class="mono">Сумын наадам · Өгтаал сум</figcaption>
           </figure>
         </div>
         <p class="src mono" data-in>
@@ -2736,10 +2713,6 @@
         <div class="grid2">
           <div>
             <h2 class="h2" data-split>Хуулиар баталгаажсан эрх</h2>
-            <p class="lead2" data-in>
-              Энэ слайдад зөвхөн хуулийн заалт байна. Бодит амьдрал дээр хэрхэн
-              хэрэгждэгийг дараагийн хэсгүүдэд харна.
-            </p>
           </div>
           <div class="law">
             <div class="mono" data-in>Монгол Улсын Үндсэн хууль</div>
@@ -2904,7 +2877,7 @@
         <h2 class="h2" data-split>Туслах уу, өмнөөс нь шийдэх үү?</h2>
         <div class="spec">
           <div class="spec-ends mono" data-in>
-            <span>Тусламж</span><span>Хяналт</span>
+            <span>Зөв</span><span>Буруу</span>
           </div>
           <div class="spec-line"><i data-bar></i></div>
           <ol class="spec-steps">
@@ -2921,9 +2894,7 @@
             </li>
           </ol>
         </div>
-        <p class="lead2" data-in>
-          Шалгах ганц асуулт: <b>эцсийн шийдвэрийг хэн гаргаж байна вэ?</b>
-        </p>
+
         <aside class="notes" data-who="2">
           Энэ бол манай илтгэлийн гол асуулт. Туслах, хянах хоёрын хооронд тод
           хил байдаггүй, нэг шугам дээр байрладаг. Сонсох, мэдээлэл өгөх, хамт
@@ -3269,10 +3240,6 @@
           </p>
           <div class="case-ask">
             <h2 class="h2" data-split>Энд ямар эрх хөндөгдөж байна вэ?</h2>
-            <button class="timer" type="button" data-in data-timer="60">
-              <span class="tt">1:00</span
-              ><span class="mono">Хөршөөсөө асуугаад ярилцъя</span>
-            </button>
           </div>
         </div>
         <aside class="notes" data-who="5">
@@ -3311,10 +3278,7 @@
             >
           </button>
         </div>
-        <p class="lead2" data-in>
-          Энд "сайн хүн, муу хүн" гэж байхгүй. Хоёулаа хайрладаг. Гэхдээ хайр
-          заримдаа хяналт болж хувирдаг.
-        </p>
+
         <aside class="notes" data-who="5">
           Хэд хэдэн хүний саналыг сонсъё. Картууд дээр дарж асуултуудыг нэг
           нэгээр нь нээнэ. Энд сайн, муу хүн гэж хуваах амаргүй: хүүхэд нь
