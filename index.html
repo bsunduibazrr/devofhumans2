@@ -4739,3 +4739,33 @@
             },
           );
 
+          // counter chases the real progress, never faster than MIN seconds
+          const MIN = 2.2,
+            CAP = 6,
+            t0 = performance.now();
+          let shown = 0;
+          (function step(now) {
+            const t = (now - t0) / 1000;
+            const real = t > CAP ? 1 : done / TOTAL;
+            const pace = Math.min(1, t / MIN);
+            const paceE = 1 - Math.pow(1 - pace, 2.2);
+            const target = Math.min(real, paceE) * 100;
+            shown += (target - shown) * 0.12;
+            if (target >= 100 && shown > 99.6) shown = 100;
+            const v = Math.floor(shown);
+            ln.textContent = v;
+            lbar.style.transform = `scaleX(${shown / 100})`;
+            lcnt.textContent = `${pad(Math.round((shown / 100) * TOTAL))} / ${pad(TOTAL)}`;
+            lstat.innerHTML =
+              v >= 100
+                ? "<b>Бэлэн</b>"
+                : v >= 70
+                  ? "Уншиж байна"
+                  : v >= 35
+                    ? "Үсгийн хэв ачаалж байна"
+                    : "Ачаалж байна";
+            if (shown < 100) requestAnimationFrame(step);
+            else leave();
+          })(t0);
+        }
+
