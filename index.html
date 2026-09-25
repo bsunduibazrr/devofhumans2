@@ -4078,3 +4078,25 @@
           });
         });
 
+        /* ---------- reveal cards ---------- */
+        $$(".dp").forEach((b) =>
+          b.addEventListener("click", () => b.classList.toggle("open")),
+        );
+
+        /* ---------- input ---------- */
+        const help = $("#help");
+        addEventListener("keydown", (e) => {
+          if (e.metaKey || e.ctrlKey || e.altKey) return;
+          const k = e.key;
+          if (k === "Escape") {
+            help.hidden = true;
+            return;
+          }
+          if (k === "?") {
+            help.hidden = !help.hidden;
+            return;
+          }
+          if (
+            ["ArrowRight", "ArrowDown", "PageDown", "Enter"].includes(k) ||
+            (k === " " && !e.shiftKey)
+          ) {
