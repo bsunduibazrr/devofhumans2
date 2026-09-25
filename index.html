@@ -328,3 +328,40 @@
         display: inline-block;
       }
 
+      /* hand-drawn marks */
+      .mark {
+        position: relative;
+        display: inline-block;
+      }
+      .scr {
+        position: absolute;
+        left: -4%;
+        width: 108%;
+        bottom: -0.12em;
+        height: 0.32em;
+        overflow: visible;
+        pointer-events: none;
+      }
+      .scr path,
+      .circ path {
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 2;
+        stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
+        stroke-dasharray: 1;
+        stroke-dashoffset: 0;
+      }
+      .fraction {
+        position: relative;
+      }
+      .circ {
+        position: absolute;
+        left: -14%;
+        top: -12%;
+        width: 128%;
+        height: 124%;
+        overflow: visible;
+        pointer-events: none;
+      }
+
