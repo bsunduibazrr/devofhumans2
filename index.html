@@ -1844,3 +1844,24 @@
         font-size: calc(var(--u) * 9.5);
       }
 
+      /* abuse */
+      .abuse {
+        margin-top: calc(var(--u) * 2.6);
+        max-width: 92%;
+      }
+      .ab {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+        gap: 0.4rem 2rem;
+        align-items: baseline;
+        padding: calc(var(--u) * 1.05) 0;
+        border-top: 1px solid var(--rule);
+      }
+      .ab:last-child {
+        border-bottom: 1px solid var(--rule);
+      }
+      .ab .nm {
+        font-family: var(--serif);
+        font-size: calc(var(--u) * 2.6);
+        line-height: 1.05;
+      }
