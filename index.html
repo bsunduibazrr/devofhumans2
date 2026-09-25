@@ -291,3 +291,21 @@
         }
       }
 
+      /* section curtain */
+      .curtain {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        background: var(--ink);
+        color: var(--paper);
+        pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        gap: calc(var(--u) * 1.4);
+        padding-inline: var(--gutter);
+        padding-block: 0 max(90px, 14vh);
+        clip-path: inset(100% 0 0 0);
+      }
+      .curtain .cc {
+        font-family: var(--mono);
